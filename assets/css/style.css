@@ -759,6 +759,70 @@ header .navbar ul li a:hover {
 }
 /* work section ends */
 
+/* certifications section starts */
+.certifications {
+  background: linear-gradient(to bottom, #101044, #09092f);
+}
+.certifications .heading span {
+  color: #55d6be;
+}
+.certifications .box-container {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+.certifications .box-container .box {
+  height: auto;
+  min-height: 38rem;
+  display: flex;
+  flex-direction: column;
+}
+.certifications .box-container .box img {
+  display: block;
+  flex: 0 0 25rem;
+  height: 25rem;
+  object-fit: contain;
+  background: #fff;
+}
+.certifications .certificate-missing {
+  min-height: 25rem;
+  flex: 0 0 25rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  color: #555;
+  background: #f4f4f4;
+  font-size: 1.6rem;
+  text-align: center;
+}
+.certifications .certificate-missing[hidden] {
+  display: none;
+}
+.certifications .box-container .box .content {
+  position: static;
+  width: 100%;
+  height: auto;
+  min-height: 13rem;
+  flex: 1;
+}
+.certifications .box-container .box:hover .content {
+  top: auto;
+}
+.certifications .box-container .box .content .tag {
+  background: #55d6be;
+}
+@media screen and (max-width: 800px) {
+  .certifications .box-container {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+@media screen and (max-width: 600px) {
+  .certifications .box-container {
+    grid-template-columns: 1fr;
+  }
+}
+/* certifications section ends */
+
 /* experience section starts */
 .experience .timeline {
   position: relative;
