@@ -1,6 +1,6 @@
 <div align="center">
 
-<img src="https://img.icons8.com/color/96/000000/name.png" width="90" alt="Jahangir Alam"/>
+<img src="./assets/images/profile.jpg" width="90" alt="Jahangir Alam"/>
 
 # 👋 Hi, I'm Jahangir Alam
 
