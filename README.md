@@ -1,6 +1,6 @@
 <div align="center">
 
-<img src="./assets/images/profile.jpg" width="100" height="140" style="border-radius:50%; border:4px solid #2ea44f;object-fit:cover;" alt="Jahangir Alam"/>
+<img src="./assets/images/profile.jpg" width="100" height="140" style="border-radius:4px; box-shadow:0 4px 14px rgba(0,0,0,0.25);" alt="Jahangir Alam"/>
 
 # 👋 Hi, I'm Jahangir Alam
 
