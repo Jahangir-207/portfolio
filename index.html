@@ -341,7 +341,7 @@
           <i class='fas fa-user'></i>
         </div>
         <div class="field">
-          <input type="text" name="email" placeholder="Email" required>
+          <input type="email" name="email" placeholder="Email" autocomplete="email" required>
           <i class='fas fa-envelope'></i>
         </div>
         <div class="field">
@@ -357,6 +357,7 @@
         <button type="submit">
           Submit <i class="fa fa-paper-plane"></i></button>
       </div>
+      <p id="contact-status" role="status" aria-live="polite"></p>
     </form>
   </div>
   </div>
@@ -428,11 +429,6 @@
 
 <!-- scroll reveal anim -->
 <script src="https://unpkg.com/scrollreveal"></script>
-
-<script
-      type="text/javascript"
-      src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"
-    ></script>
 
 <!-- ==== ALL MAJOR JAVASCRIPT CDNS ENDS ==== -->
 

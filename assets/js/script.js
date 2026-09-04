@@ -37,22 +37,35 @@ $(document).ready(function () {
         }, 500, 'linear')
     });
 
-    // <!-- emailjs to mail contact form data -->
     $("#contact-form").submit(function (event) {
-        emailjs.init("user_TTDmetQLYgWCLzHTDgqxm");
-
-        emailjs.sendForm('contact_service', 'template_contact', '#contact-form')
-            .then(function (response) {
-                console.log('SUCCESS!', response.status, response.text);
-                document.getElementById("contact-form").reset();
-                alert("Form Submitted Successfully");
-            }, function (error) {
-                console.log('FAILED...', error);
-                alert("Form Submission Failed! Try Again");
-            });
         event.preventDefault();
+
+        const form = this;
+        const button = form.querySelector('button[type="submit"]');
+        const status = document.getElementById("contact-status");
+        const message = form.elements.message.value.trim();
+        const recipient = "jahangirjahan7761088067@gmail.com";
+
+        if (!message) {
+            status.textContent = "Please enter a message.";
+            return;
+        }
+
+        const subject = encodeURIComponent("Portfolio contact from " + form.elements.name.value.trim());
+        const body = encodeURIComponent(
+            "Name: " + form.elements.name.value.trim() +
+            "\nEmail: " + form.elements.email.value.trim() +
+            "\nPhone: " + (form.elements.phone.value.trim() || "Not provided") +
+            "\n\nMessage:\n" + message
+        );
+
+        status.textContent = "Opening your email app...";
+        button.disabled = true;
+        window.location.href = "mailto:" + recipient + "?subject=" + subject + "&body=" + body;
+        form.reset();
+        button.disabled = false;
+        status.textContent = "Your email app should open with the message ready to send.";
     });
-    // <!-- emailjs to mail contact form data -->
 
 });
 
@@ -189,19 +202,6 @@ document.onkeydown = function (e) {
         return false;
     }
 }
-
-// Start of Tawk.to Live Chat
-var Tawk_API = Tawk_API || {}, Tawk_LoadStart = new Date();
-(function () {
-    var s1 = document.createElement("script"), s0 = document.getElementsByTagName("script")[0];
-    s1.async = true;
-    s1.src = 'https://embed.tawk.to/60df10bf7f4b000ac03ab6a8/1f9jlirg6';
-    s1.charset = 'UTF-8';
-    s1.setAttribute('crossorigin', '*');
-    s0.parentNode.insertBefore(s1, s0);
-})();
-// End of Tawk.to Live Chat
-
 
 /* ===== SCROLL REVEAL ANIMATION ===== */
 const srtop = ScrollReveal({
